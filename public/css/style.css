@@ -1,0 +1,42 @@
+/* style.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app {
+  text-align: center;
+}
+/* title */
+
+.title {
+  background-color: antiquewhite;
+}
+.title .container {
+  width: 375px;
+  /* height: 100vh; */
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* greetings */
+.greetings {
+  background-color: rgba(255, 137, 177, 0.747);
+}
+.greetings .container {
+  width: 375px;
+  /* height: 100vh; */
+}
+
+/* board */
+.board {
+  background-color: skyblue;
+}
+.board .container {
+  width: 375px;
+  /* height: 100vh; */
+}

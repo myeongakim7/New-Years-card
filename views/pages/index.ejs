@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연하장</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- 글꼴 / 나눔고딕,나눔명조 -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="app">
+    <div class="app-container">
+      <div class="title">
+        <div class="container">
+          <h1>근하<br>신년</h1>
+          <p>희망찬 새해<br>행운이 가득하시기 바랍니다</p>
+        </div>
+        <!--container-->
+      </div>
+      <!--title-->
+      <div class="greetings">
+        <div class="container">
+          <h2>새해에는 항상 건강하시고<br>
+            좋은 일 가득하시길 기원합니다</h2>
+          <div class="box">
+            <div class="image-gallery"></div>
+            <!--image-gallery-->
+            <div class="click-box">
+              <div class="click"></div>
+              <div class="click"></div>
+              <div class="click"></div>
+            </div>
+            <!--click-box-->
+          </div>
+          <!--box-->
+          <p>다사다난했던 지난 해 <br>
+            무거운 짐들은 다 털어내시고 <br>
+            새로운 희망, 새로운 마음으로 <br>
+            새해 힘차게 출발하시기 바랍니다.<br>
+            새해 복 많이 받으세요.</p>
+          <h3>홍길동 드림</h3>
+        </div>
+        <!--container-->
+      </div>
+      <!--greetings-->
+      <div class="board">
+        <div class="container">
+          <h3>덕담 한마디</h3>
+          <div class="text-box">
+            <form action="/create" method="post">
+              <label for="post"></label>
+              <input type="textarea" name="post" id="textarea" placeholder="여기에 글을 작성해주세요" style="font-size:16px"><br>
+              <input type=" text" name="post" id="text" placeholder="작성자" style="font-size:16px">
+              <button id="btn" value="submit">write</button>
+            </form>
+            <hr>
+            <div class="comments">
+              <div class="comments-box">
+
+              </div>
+              <!--comments-box-->
+            </div>
+            <!--comments-->
+          </div>
+          <!--text-box-->
+        </div>
+        <!--container-->
+      </div>
+      <!--board-->
+    </div>
+    <!--app-container-->
+  </div>
+  <!--app-->
+
+</body>
+
+</html>
