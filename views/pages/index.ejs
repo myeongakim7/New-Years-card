@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>연하장</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css" />
   <!-- 글꼴 / 나눔고딕,나눔명조 -->
   <link
     href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap"
-    rel="stylesheet">
-
+    rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
@@ -19,32 +19,80 @@
     <div class="app-container">
       <div class="title">
         <div class="container">
-          <h1>근하<br>신년</h1>
-          <p>희망찬 새해<br>행운이 가득하시기 바랍니다</p>
+          <h1>근하<br />신년</h1>
+          <p>희망찬 새해<br />행운이 가득하시기 바랍니다</p>
         </div>
         <!--container-->
       </div>
       <!--title-->
       <div class="greetings">
         <div class="container">
-          <h2>새해에는 항상 건강하시고<br>
-            좋은 일 가득하시길 기원합니다</h2>
-          <div class="box">
-            <div class="image-gallery"></div>
-            <!--image-gallery-->
-            <div class="click-box">
-              <div class="click"></div>
-              <div class="click"></div>
-              <div class="click"></div>
+          <h2>
+            새해에는 항상 건강하시고<br />
+            좋은 일 가득하시길 기원합니다
+          </h2>
+
+          <script>
+            function nextImg() {
+              $("#gallery .sliders img").first().appendTo("#gallery .sliders");
+            }
+
+            function prevImg() {
+              $("#gallery .sliders img").last().prependTo("#gallery .sliders");
+            }
+
+            // fade 효과를 위한 js
+
+            //  이미지 번호
+            let imgNum = 0;
+
+            function nextFadeImg() {
+              imgNum++;
+              if (imgNum == 3) {
+                imgNum = 0;
+              }
+              // 나머지 이미지 비표시
+              $("#gallery .sliders img").removeClass("show");
+              // 현재 이미지만 표시
+              $("#gallery .sliders img").eq(imgNum).addClass("show");
+              console.log(imgNum);
+            }
+
+            function prevFadeImg() {
+              imgNum--;
+              if (imgNum == -1) {
+                imgNum = 2;
+              }
+              // 나머지 이미지 비표시
+              $("#gallery .sliders img").removeClass("show");
+              // 현재 이미지만 표시
+              $("#gallery .sliders img").eq(imgNum).addClass("show");
+              console.log(imgNum);
+
+              // prevImg();
+              // nextImg();
+              // prevFadeImg();
+              // nextFadeImg();
+            }
+          </script>
+          <div id="gallery">
+            <div class="sliders fade">
+              <img class="show" src="/images/img1.jpg" alt="img1">
+              <img class="show" src="/images/img2.jpg" alt="img2">
+              <img class="show" src="/images/img3.jpg" alt="img3">
             </div>
-            <!--click-box-->
           </div>
-          <!--box-->
-          <p>다사다난했던 지난 해 <br>
-            무거운 짐들은 다 털어내시고 <br>
-            새로운 희망, 새로운 마음으로 <br>
-            새해 힘차게 출발하시기 바랍니다.<br>
-            새해 복 많이 받으세요.</p>
+          <button id="btn" onclick="prevImg();prevFadeImg();">〈</button>
+          <button id="btn" onclick="nextImg();nextFadeImg();">〉</button>
+
+
+          <p>
+            다사다난했던 지난 해 <br />
+            무거운 짐들은 다 털어내시고 <br />
+            새로운 희망, 새로운 마음으로 <br />
+            새해 힘차게 출발하시기 바랍니다.<br />
+            새해 복 많이 받으세요.
+          </p>
           <h3>홍길동 드림</h3>
         </div>
         <!--container-->
@@ -56,18 +104,26 @@
           <div class="text-box">
             <form action="/create" method="post">
               <label for="post"></label>
-              <input type="textarea" name="post" id="textarea" placeholder="여기에 글을 작성해주세요" style="font-size:16px"><br>
-              <input type=" text" name="post" id="text" placeholder="작성자" style="font-size:16px">
-              <button id="btn" value="submit">write</button>
+              <input type="textarea" name="post" id="textarea" placeholder="여기에 글을 작성해주세요" maxlength="255"
+                style="font-size: 16px" /><br />
+              <input type=" text" name="name" id="text" placeholder="작성자" style="font-size: 16px" />
+              <button id="btn" value="submit" onclick="">write</button>
             </form>
-            <hr>
-            <div class="comments">
-              <div class="comments-box">
+            <hr />
 
-              </div>
-              <!--comments-box-->
-            </div>
-            <!--comments-->
+            <ul class="post-list-ul">
+              <% for(let i = CoArr.length - 1; i >= 0; i--) { %>
+              <li class="post-list-li">
+                <div class="p-box">
+                  <p><%= i %> 작성자: <%= nameArr[i] %></p>
+                  <p>댓글: <%= CoArr[i] %></p>
+                </div>
+                <form action="/delete/<%= i %>" method="post">
+                  <button type="submit" id="delete">삭제</button>
+                </form>
+              </li>
+              <% } %>
+            </ul>
           </div>
           <!--text-box-->
         </div>
@@ -78,7 +134,7 @@
     <!--app-container-->
   </div>
   <!--app-->
-
+  <script type="application/octet-stream" src="/index.js"></script>
 </body>
 
 </html>

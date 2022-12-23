@@ -12,18 +12,18 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
 
-// myo [ {posts}.push, textarea ]
-
 // fake DB
-let posts = { name: "myo", comment: "라랄" };
-// console.log(posts.name);
-// console.log(posts.comment);
+let nameArr = [];
+let CoArr = [];
 
 // DB 파일 불러오기
-const readfile = fs.readFileSync("postsDB.json", "utf-8");
+const readfile = fs.readFileSync("postDB.json", "utf-8");
+const readfile2 = fs.readFileSync("nameDB.json", "utf-8");
 const jsonData = JSON.parse(readfile);
-console.log(jsonData);
-posts = [...jsonData];
+const jsonData2 = JSON.parse(readfile2);
+CoArr = [...jsonData];
+nameArr = [...jsonData2];
+// console.log(posts);
 
 // ejs를 view 엔진으로 설정
 app.set("view engine", "ejs");
@@ -35,28 +35,36 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// home
-app.get("/", function (요청, 응답) {
-  응답.render("pages/index.ejs");
-});
-
-// 글쓰기 요청
+// 글쓰기 요청 /create
 app.post("/create", function (req, res) {
-  const post = req.body.post;
-  console.log(req.body);
-  res.send(post);
-  posts.push(post);
-  console.log("뭐야뭐야 =", posts);
-
-  // DB에 글 저장
-  // res.send(post);
-  // post.push(post); // 배열에 post를 추가 .push()
-  // console.log(post);
+  const 글 = req.body.post;
+  CoArr.push(글); // posts 배열에 글 추가
+  const 이름 = req.body.name;
+  nameArr.push(이름); // posts 배열에 글 추가
 
   // DB file에 글 저장
-  fs.writeFileSync("postsDB.json", JSON.stringify(posts));
-  // console.log(posts);
+  fs.writeFileSync("postDB.json", JSON.stringify(CoArr));
+  fs.writeFileSync("nameDB.json", JSON.stringify(nameArr));
+  res.redirect("/"); // 홈으로 이동
+});
 
-  // 홈(게시판)으로 이동
+// 글삭제 요청 /delete
+app.post("/delete/:id", function (req, res) {
+  // id 글번호
+  const id = req.params.id;
+  console.log(id);
+  // id값에 해당하는 posts 삭제
+  CoArr.splice(id, 1);
+  nameArr.splice(id, 1);
+  fs.writeFileSync("postDB.json", JSON.stringify(CoArr));
+  fs.writeFileSync("nameDB.json", JSON.stringify(nameArr));
   res.redirect("/");
 });
+
+// home
+app.get("/", function (요청, 응답) {
+  응답.render("pages/index.ejs", {
+    nameArr,
+    CoArr,
+  });
+}); // 안에 변수넣기
