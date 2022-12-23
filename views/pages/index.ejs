@@ -19,7 +19,8 @@
     <div class="app-container">
       <div class="title">
         <div class="container">
-          <h1>근하<br />신년</h1>
+          <h1>2023</h1>
+          <h2>근하신년</h2>
           <p>희망찬 새해<br />행운이 가득하시기 바랍니다</p>
         </div>
         <!--container-->
@@ -108,21 +109,39 @@
                 style="font-size: 16px" /><br />
               <input type=" text" name="name" id="text" placeholder="작성자" style="font-size: 16px" />
               <button id="btn" value="submit" onclick="">write</button>
+              <input type="hidden" name="date" id="date" value="" />
             </form>
-            <hr />
+
+            <script>
+              var today = new Date();
+
+              let theYears = today.getFullYear();
+              let theMonth = today.getMonth();
+              let theDate = today.getDate();
+              let current = `${theYears}.${theMonth}.${theDate}`
+              console.log(current);
+
+              let dateValue = document.getElementById('date')
+              dateValue.value = current
+              var todayDate = current;
+            </script>
 
             <ul class="post-list-ul">
               <% for(let i = CoArr.length - 1; i >= 0; i--) { %>
               <li class="post-list-li">
                 <div class="p-box">
-                  <p><%= i %> 작성자: <%= nameArr[i] %></p>
-                  <p>댓글: <%= CoArr[i] %></p>
+                  <p class="p-box-name"><%= nameArr[i] %></p>
+                  <p class="p-box-date"><%= dateArr %></p>
+                  <p class="p-box-comment"><%= CoArr[i] %></p>
                 </div>
                 <form action="/delete/<%= i %>" method="post">
                   <button type="submit" id="delete">삭제</button>
                 </form>
               </li>
               <% } %>
+
+
+
             </ul>
           </div>
           <!--text-box-->

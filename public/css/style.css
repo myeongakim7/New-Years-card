@@ -20,36 +20,46 @@ font-family: 'Nanum Myeongjo', sans-serif;
 
 /* title */
 .title {
-  background-color: antiquewhite;
-  /* background-image: url(/images/banner.jpg); */
+  background-image: url(/images/banner3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
 }
 .title .container {
-  /* width: 375px; */
-
-  /* height: 680px; */
+  width: 375px;
+  height: 680px;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .title .container h1 {
   font-family: "Nanum Myeongjo", sans-serif;
   font-size: 96px;
   font-weight: 800;
   line-height: 120px;
-  padding: 160px 0 40px 0;
+  padding: 45px 0 350px 0;
+  color: rgba(128, 0, 128, 0.675);
+}
+.title .container h2 {
+  font-family: "Nanum Myeongjo", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 36px;
+  margin: 10px;
+  color: rgba(128, 0, 128, 0.958);
 }
 .title .container p {
   font-family: "Nanum Myeongjo", sans-serif;
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 36px;
+  color: rgba(128, 0, 128, 0.958);
 }
 
 /* greetings */
 .greetings {
-  background-color: rosybrown;
+  background-color: #bbb0e88b;
 }
 .greetings .container {
   /* width: 375px; */
@@ -115,15 +125,13 @@ font-family: 'Nanum Myeongjo', sans-serif;
   text-align: center;
   width: 30px;
   height: 30px;
-  border: 1px solid #ccc;
-  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.67);
+  color: rgba(0, 0, 0, 0.67);
   background-color: transparent;
 }
 
 /* board */
-.board {
-  background-color: rgba(250, 250, 210, 0.568);
-}
+
 .board .container {
   width: 336px;
   height: 100vh;
@@ -144,7 +152,7 @@ font-family: 'Nanum Myeongjo', sans-serif;
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 5px 0px 0px 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .board .container .text-box #text {
@@ -171,7 +179,30 @@ font-family: 'Nanum Myeongjo', sans-serif;
 /* text-list */
 
 .post-list-ul .post-list-li {
-  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.post-list-ul .post-list-li .p-box {
+  text-align: left;
+  width: 80%;
+}
+
+.post-list-ul .post-list-li .p-box-name {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.post-list-ul .post-list-li .p-box-date {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.post-list-ul .post-list-li .p-box-comment {
+  font-weight: 500;
+  font-size: 16px;
 }
 .post-list-ul #delete {
   background-color: transparent;
