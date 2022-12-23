@@ -1,5 +1,8 @@
 # New-year-s-card
 
+
+
+
   <h3>2022/12/22</h3>
   <ul>
     <li>node.js 설치</li>
@@ -15,4 +18,6 @@
     <li>postDB.json=> nameDB.json, postDB.json파일로 각 각 나눠서 분류</li>
     <li>작성자, 댓글창 맨 위에 최신순으로 오게 수정</li>
     <li>댓글창 삭제기능 추가</li>
+    <li>css 수정</li>
+    <li>SEO 최적화 수행</li>
   </ul>
