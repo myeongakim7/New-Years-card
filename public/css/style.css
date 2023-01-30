@@ -4,6 +4,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+  /* background: #cdcdcf; */
+}
 
 ul {
   list-style: none;
