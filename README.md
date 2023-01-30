@@ -21,3 +21,10 @@
     <li>css 수정</li>
     <li>SEO 최적화 수행</li>
   </ul>
+    <h3>2023/01/30</h3>
+  <ul>
+    <li>모바일 화면 규격 불일치 해결</li>
+  </ul>
+  <hr>
+  <h3>산출물 이미지</h3>
+  <img src="capture.png" alt="capture">
