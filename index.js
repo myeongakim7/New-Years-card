@@ -13,9 +13,9 @@ app.listen(port, () => {
 });
 
 // fake DB
-let nameArr = [];
-let CoArr = [];
-let dateArr = [];
+let nameArr = []; // 이름
+let CoArr = []; // 코멘트
+let dateArr = []; // 날짜
 
 // DB 파일 불러오기
 const readfile = fs.readFileSync("postDB.json", "utf-8");
@@ -45,7 +45,7 @@ app.post("/create", function (req, res) {
   const 이름 = req.body.name;
   nameArr.push(이름); // posts 배열에 이름 추가
   const 날짜 = req.body.date;
-  nameArr.push(날짜); // posts 배열에 날짜 추가
+  dateArr.push(날짜); // posts 배열에 날짜 추가
 
   // DB file에 글 저장
   fs.writeFileSync("postDB.json", JSON.stringify(CoArr));

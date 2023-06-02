@@ -4,13 +4,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* overflow: hidden; */
-  /* background: #cdcdcf; */
-}
 
 ul {
   list-style: none;
@@ -24,9 +17,6 @@ font-family: 'Nanum Myeongjo', sans-serif;
   text-align: center;
   margin: 0 auto;
 }
-.app .app-container {
-  width: 375px;
-}
 
 /* title */
 .title {
@@ -36,8 +26,9 @@ font-family: 'Nanum Myeongjo', sans-serif;
   background-position: center center;
 }
 .title .container {
+  width: 375px;
   height: 680px;
-  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,9 +62,9 @@ font-family: 'Nanum Myeongjo', sans-serif;
   background-color: #bbb0e88b;
 }
 .greetings .container {
-  width: 100%;
+  /* width: 375px; */
+  height: 100vh;
 }
-
 .greetings .container h2 {
   font-family: "Nanum Myeongjo", sans-serif;
   font-size: 20px;
@@ -97,7 +88,7 @@ font-family: 'Nanum Myeongjo', sans-serif;
 
 /*  gallery */
 #gallery {
-  /* width: 100%; */
+  width: 100%;
   height: 200px;
   overflow: hidden;
   display: flex;
@@ -120,7 +111,7 @@ font-family: 'Nanum Myeongjo', sans-serif;
 #gallery .sliders.fade > img {
   opacity: 0.5;
   z-index: 0;
-  transition-duration: 2s;
+  transition-duration: 4s;
 }
 
 /* 현재 이미지 */
@@ -134,8 +125,8 @@ font-family: 'Nanum Myeongjo', sans-serif;
   text-align: center;
   width: 30px;
   height: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.523);
-  color: #000;
+  color: rgba(0, 0, 0, 0.67);
+  border: 1px solid #a3a3a3;
   background-color: transparent;
 }
 

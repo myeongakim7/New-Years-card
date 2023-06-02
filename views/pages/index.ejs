@@ -1,174 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연하장(New year's card)</title>
+    <!-- og : open graph  -->
+    <!-- 웹사이트 이름 -->
+    <meta name="og:site_name" content="New Year's card" />
+    <!-- 웹페이지 제목 -->
+    <meta name="og:title" content="New Year's card" />
+    <!-- 웹페이지 상세설명 -->
+    <meta name="og:description" content="새해 복 많이 받으세요" />
+    <meta name="og:type" content="post" />
+    <!-- 웹페이지 주소 -->
+    <meta
+      name="og:url"
+      content="https://myeongakim7.github.io/New-year-s-card/"
+    />
+    <!-- 썸네일 주소 찾기 -->
+    <meta
+      name="og:image"
+      content="C:\Users\학생용\Desktop\New-Year-card\capture.jpg"
+    />
+    <!-- 웹페이지 썸네일 (권장크기:1200 X 630)-->
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- 글꼴 / 나눔고딕,나눔명조 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>연하장(New year's card)</title>
-  <!-- og : open graph  -->
-  <!-- 웹사이트 이름 -->
-  <meta name="og:site_name" content="New Year's card" />
-  <!-- 웹페이지 제목 -->
-  <meta name="og:title" content="New Year's card" />
-  <!-- 웹페이지 상세설명 -->
-  <meta name="og:description" content="새해 복 많이 받으세요" />
-  <meta name="og:type" content="post" />
-  <!-- 웹페이지 주소 -->
-  <meta name="og:url" content="https://myeongakim7.github.io/New-year-s-card/" />
-  <!-- 썸네일 주소 찾기 -->
-  <meta name="og:image" content="C:\Users\학생용\Desktop\New-Year-card\capture.jpg" />
-  <!-- 웹페이지 썸네일 (권장크기:1200 X 630)-->
-  <link rel="stylesheet" href="/css/style.css" />
-  <!-- 글꼴 / 나눔고딕,나눔명조 -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap"
-    rel="stylesheet" />
-  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-</head>
-
-<body>
-
-  <div class="app">
-    <div class="app-container">
-      <div class="title">
-        <div class="container">
-          <h1>2023</h1>
-          <h2>근하신년</h2>
-          <p>희망찬 새해<br />행운이 가득하시기 바랍니다</p>
-        </div>
-        <!--container-->
-      </div>
-      <!--title-->
-      <div class="greetings">
-        <div class="container">
-          <h2>
-            새해에는 항상 건강하시고<br />
-            좋은 일 가득하시길 기원합니다
-          </h2>
-
-          <script>
-            function nextImg() {
-              $("#gallery .sliders img").first().appendTo("#gallery .sliders");
-            }
-
-            function prevImg() {
-              $("#gallery .sliders img").last().prependTo("#gallery .sliders");
-            }
-
-            // fade 효과를 위한 js
-
-            //  이미지 번호
-            let imgNum = 0;
-
-            function nextFadeImg() {
-              imgNum++;
-              if (imgNum == 3) {
-                imgNum = 0;
-              }
-              // 나머지 이미지 비표시
-              $("#gallery .sliders img").removeClass("show");
-              // 현재 이미지만 표시
-              $("#gallery .sliders img").eq(imgNum).addClass("show");
-              console.log(imgNum);
-            }
-
-            function prevFadeImg() {
-              imgNum--;
-              if (imgNum == -1) {
-                imgNum = 2;
-              }
-              // 나머지 이미지 비표시
-              $("#gallery .sliders img").removeClass("show");
-              // 현재 이미지만 표시
-              $("#gallery .sliders img").eq(imgNum).addClass("show");
-              console.log(imgNum);
-
-              // prevImg();
-              // nextImg();
-              // prevFadeImg();
-              // nextFadeImg();
-            }
-          </script>
-          <div id="gallery">
-            <div class="sliders fade">
-              <img class="show" src="/images/img1.jpg" alt="img1">
-              <img class="show" src="/images/img2.jpg" alt="img2">
-              <img class="show" src="/images/img3.jpg" alt="img3">
-            </div>
+  <body>
+    <div class="app">
+      <div class="app-container">
+        <div class="title">
+          <div class="container">
+            <h1>2023</h1>
+            <h2>근하신년</h2>
+            <p>희망찬 새해<br />행운이 가득하시기 바랍니다</p>
           </div>
-          <!--gallery-->
-          <button id="btn" onclick="prevImg();prevFadeImg();">〈</button>
-          <button id="btn" onclick="nextImg();nextFadeImg();">〉</button>
-
-
-          <p>
-            다사다난했던 지난 해 <br />
-            무거운 짐들은 다 털어내시고 <br />
-            새로운 희망, 새로운 마음으로 <br />
-            새해 힘차게 출발하시기 바랍니다.<br />
-            새해 복 많이 받으세요.
-          </p>
-          <h3>홍길동 드림</h3>
+          <!--container-->
         </div>
-        <!--container-->
-      </div>
-      <!--greetings-->
-      <div class="board">
-        <div class="container">
-          <h3>덕담 한마디</h3>
-          <div class="text-box">
-            <form action="/create" method="post">
-              <label for="post"></label>
-              <input type="textarea" name="post" id="textarea" placeholder="여기에 글을 작성해주세요" maxlength="255"
-                style="font-size: 16px" /><br />
-              <input type=" text" name="name" id="text" placeholder="작성자" style="font-size: 16px" />
-              <button id="btn" value="submit" onclick="">write</button>
-              <input type="hidden" name="date" id="date" value="" />
-            </form>
+        <!--title-->
+        <div class="greetings">
+          <div class="container">
+            <h2>
+              새해에는 항상 건강하시고<br />
+              좋은 일 가득하시길 기원합니다
+            </h2>
 
             <script>
-              var today = new Date();
+              function nextImg() {
+                $("#gallery .sliders img")
+                  .first()
+                  .appendTo("#gallery .sliders");
+              }
 
-              let theYears = today.getFullYear();
-              let theMonth = today.getMonth();
-              let theDate = today.getDate();
-              let current = `${theYears}.${theMonth}.${theDate}`
-              console.log(current);
+              function prevImg() {
+                $("#gallery .sliders img")
+                  .last()
+                  .prependTo("#gallery .sliders");
+              }
 
-              let dateValue = document.getElementById('date')
-              dateValue.value = current
-              var todayDate = current;
+              // fade 효과를 위한 js
+
+              //  이미지 번호
+              let imgNum = 0;
+
+              function nextFadeImg() {
+                imgNum++;
+                if (imgNum == 3) {
+                  imgNum = 0;
+                }
+                // 나머지 이미지 비표시
+                $("#gallery .sliders img").removeClass("show");
+                // 현재 이미지만 표시
+                $("#gallery .sliders img").eq(imgNum).addClass("show");
+                console.log(imgNum);
+              }
+
+              function prevFadeImg() {
+                imgNum--;
+                if (imgNum == -1) {
+                  imgNum = 2;
+                }
+                // 나머지 이미지 비표시
+                $("#gallery .sliders img").removeClass("show");
+                // 현재 이미지만 표시
+                $("#gallery .sliders img").eq(imgNum).addClass("show");
+                console.log(imgNum);
+
+                // prevImg();
+                // nextImg();
+                // prevFadeImg();
+                // nextFadeImg();
+              }
             </script>
+            <div id="gallery">
+              <div class="sliders fade">
+                <img class="show" src="/images/img1.jpg" alt="img1" />
+                <img class="show" src="/images/img2.jpg" alt="img2" />
+                <img class="show" src="/images/img3.jpg" alt="img3" />
+              </div>
+            </div>
+            <button id="btn" onclick="prevImg();prevFadeImg();">〈</button>
+            <button id="btn" onclick="nextImg();nextFadeImg();">〉</button>
 
-            <ul class="post-list-ul">
-              <% for(let i = CoArr.length - 1; i >= 0; i--) { %>
-              <li class="post-list-li">
-                <div class="p-box">
-                  <p class="p-box-name"><%= nameArr[i] %></p>
-                  <p class="p-box-date"><%= dateArr %></p>
-                  <p class="p-box-comment"><%= CoArr[i] %></p>
-                </div>
-                <form action="/delete/<%= i %>" method="post">
-                  <button type="submit" id="delete">삭제</button>
-                </form>
-              </li>
-              <% } %>
-
-
-
-            </ul>
+            <p>
+              다사다난했던 지난 해 <br />
+              무거운 짐들은 다 털어내시고 <br />
+              새로운 희망, 새로운 마음으로 <br />
+              새해 힘차게 출발하시기 바랍니다.<br />
+              새해 복 많이 받으세요.
+            </p>
+            <h3>김명아 드림</h3>
           </div>
-          <!--text-box-->
+          <!--container-->
         </div>
-        <!--container-->
-      </div>
-      <!--board-->
-    </div>
-    <!--app-container-->
-  </div>
-  <!--app-->
-  <script type="application/octet-stream" src="/index.js"></script>
-</body>
+        <!--greetings-->
+        <div class="board">
+          <div class="container">
+            <h3>덕담 한마디</h3>
+            <div class="text-box">
+              <form action="/create" method="post">
+                <label for="post"></label>
+                <input
+                  type="textarea"
+                  name="post"
+                  id="textarea"
+                  placeholder="여기에 글을 작성해주세요"
+                  maxlength="255"
+                  style="font-size: 16px"
+                /><br />
+                <input
+                  type=" text"
+                  name="name"
+                  id="text"
+                  placeholder="작성자"
+                  style="font-size: 16px"
+                />
+                <button id="btn" value="submit" onclick="">write</button>
+                <input type="hidden" name="date" id="date" />
+              </form>
 
+              <script>
+                var today = new Date();
+
+                let theYears = today.getFullYear();
+                let theMonth = today.getMonth();
+                let theDate = today.getDate();
+                let current = `${theYears}.${theMonth}.${theDate}`;
+                console.log(current);
+
+                let dateValue = document.getElementById("date");
+                dateValue.value = current;
+                var todayDate = current;
+              </script>
+
+              <ul class="post-list-ul">
+                <% for(let i = CoArr.length - 1; i >= 0; i--) { %>
+                <li class="post-list-li">
+                  <div class="p-box">
+                    <p class="p-box-name"><%= nameArr[i] %></p>
+                    <p class="p-box-date"><%= dateArr[i] %></p>
+                    <p class="p-box-comment"><%= CoArr[i] %></p>
+                  </div>
+                  <form action="/delete/<%= i %>" method="post">
+                    <button type="submit" id="delete">삭제</button>
+                  </form>
+                </li>
+                <% } %>
+              </ul>
+            </div>
+            <!--text-box-->
+          </div>
+          <!--container-->
+        </div>
+        <!--board-->
+      </div>
+      <!--app-container-->
+    </div>
+    <!--app-->
+    <script type="application/octet-stream" src="/index.js"></script>
+  </body>
 </html>
