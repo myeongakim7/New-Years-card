@@ -24,6 +24,10 @@
   <ul>
     <li>모바일 화면 규격 불일치 해결</li>
   </ul>
+  <ul>
+  <li>날짜 오류 수정
+    => date의 value값을 ""으로 설정해놓아서 쓴 날짜 업데이트가 안됐었음 </li>
+</ul>
   <hr>
   <h3>산출물 이미지</h3>
   <img src="capture.png" alt="capture">
