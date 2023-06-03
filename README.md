@@ -14,9 +14,9 @@
   <ul>
     <li>이미지 슬라이더 추가</li>
     <li>이미지 슬라이드 시 페이드 효과</li>
-    <li>postDB.json=> nameDB.json, postDB.json파일로 각 각 나눠서 분류</li>
+    <li>postDB.json, nameDB.json, dateDB.json파일로 각 각 나눠서 분류</li>
     <li>작성자, 댓글창 맨 위에 최신순으로 오게 수정</li>
-    <li>댓글창 삭제기능 추가</li>
+    <li>댓글창 삭제 기능 추가</li>
     <li>css 수정</li>
     <li>SEO 최적화 수행</li>
   </ul>
@@ -30,4 +30,4 @@
 </ul>
   <hr>
   <h3>산출물 이미지</h3>
-  <img src="fullscreenshot.png" alt="capture">
+  <img src="public/images/fullscreenshot.png" alt="capture">
