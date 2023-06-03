@@ -30,4 +30,4 @@
 </ul>
   <hr>
   <h3>산출물 이미지</h3>
-  <img src="capture.png" alt="capture">
+  <img src="fullscreenshot.png" alt="capture">
