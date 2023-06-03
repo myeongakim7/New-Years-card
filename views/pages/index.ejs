@@ -40,7 +40,6 @@
           <div class="container">
             <h1>2023</h1>
             <h2>근하신년</h2>
-            <p>희망찬 새해<br />행운이 가득하시기 바랍니다</p>
           </div>
           <!--container-->
         </div>
@@ -92,11 +91,6 @@
                 // 현재 이미지만 표시
                 $("#gallery .sliders img").eq(imgNum).addClass("show");
                 console.log(imgNum);
-
-                // prevImg();
-                // nextImg();
-                // prevFadeImg();
-                // nextFadeImg();
               }
             </script>
             <div id="gallery">
@@ -106,9 +100,15 @@
                 <img class="show" src="/images/img3.jpg" alt="img3" />
               </div>
             </div>
-            <button id="btn" onclick="prevImg();prevFadeImg();">〈</button>
-            <button id="btn" onclick="nextImg();nextFadeImg();">〉</button>
-
+            <div class="btn-box">
+              <button id="btn" onclick="prevImg();prevFadeImg();">
+                <img src="/images/icon-left.svg" alt="left" />
+              </button>
+              <button id="btn" onclick="nextImg();nextFadeImg();">
+                <img src="/images/icon-right.svg" alt="right" />
+              </button>
+            </div>
+            <!--btn-box-->
             <p>
               다사다난했던 지난 해 <br />
               무거운 짐들은 다 털어내시고 <br />
